@@ -12,7 +12,7 @@ config = {
     'version': '0.1',
     'install_requires': ['pip'],
     'packages': ['pipview'],
-    'scripts': [],
+    'entry_points': {'console_scripts': ['pip-view=pipview.view:main']},
     'name': 'pipview'
 }
 

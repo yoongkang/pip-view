@@ -1,8 +1,10 @@
+setup.cfg
 setup.py
 pipview/__init__.py
 pipview/view.py
 pipview.egg-info/PKG-INFO
 pipview.egg-info/SOURCES.txt
 pipview.egg-info/dependency_links.txt
+pipview.egg-info/entry_points.txt
 pipview.egg-info/requires.txt
 pipview.egg-info/top_level.txt

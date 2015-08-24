@@ -1,4 +1,3 @@
-import logging
 import os
 import subprocess
 
@@ -6,8 +5,6 @@ from pip.basecommand import Command
 from pip.commands.show import search_packages_info
 from pip.status_codes import SUCCESS, ERROR
 from pip._vendor import pkg_resources
-
-logger = logging.getLogger(__name__)
 
 
 class ViewCommand(Command):
@@ -26,11 +23,8 @@ class ViewCommand(Command):
 
     def run(self, options, args):
         if not args:
-            logger.warning('ERROR: Please provide a package name or names.')
             return ERROR
         if not os.getenv('PIP_EDITOR'):
-            logger.warning(
-                'ERROR: Please set $PIP_EDITOR to open the package.')
             return ERROR
         query = args
         shell_command = os.getenv('PIP_EDITOR').split()
@@ -38,7 +32,6 @@ class ViewCommand(Command):
         installed = dict(
             [(p.project_name.lower(), p) for p in pkg_resources.working_set])
         if len(results) is 0:
-            logger.warning("ERROR: Could not find package(s).")
             return ERROR
         for dist in results:
             pkg = installed[dist['name'].lower()]
@@ -57,3 +50,8 @@ class ViewCommand(Command):
             if status_code is not SUCCESS:
                 return ERROR
         return SUCCESS
+
+
+def main(*args):
+    view_cmd = ViewCommand()
+    view_cmd.run({}, args)
