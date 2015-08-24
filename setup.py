@@ -6,8 +6,8 @@ except ImportError:
 config = {
     'description': 'pipview',
     'author': 'Yoong Kang Lim',
-    'url': 'http://github.com/yoongkang/pipview',
-    'download_url': 'http://github.com/yoongkang/pipview',
+    'url': 'http://github.com/yoongkang/pip-view',
+    'download_url': 'http://github.com/yoongkang/pip-view',
     'author_email': 'yoongkang.lim@gmail.com',
     'version': '0.1',
     'install_requires': ['pip'],
