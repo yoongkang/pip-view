@@ -5,11 +5,7 @@ Ensure that the environment variable $EDITOR has been set.
 
 Installation
 --------
-    $ git clone https://github.com/yoongkang/pip-view.git
-
-    $ cd pip-view
-    
-    $ python setup.py install
+    pip install pipview
 
 
 Usage:
