@@ -13,7 +13,7 @@ class ViewCommand(Command):
 
     """
     Views the package source directory with the editor defined in
-    $PIP_EDITOR.
+    $EDITOR.
     """
     name = 'view'
     usage = """
@@ -27,12 +27,12 @@ class ViewCommand(Command):
         if not args:
             sys.stdout.write('ERROR: Please provide a package name or names.\n')
             return ERROR
-        if not os.getenv('PIP_EDITOR'):
+        if not os.getenv('EDITOR'):
             sys.stdout.write(
-                'ERROR: Please set $PIP_EDITOR to open the package.\n')
+                'ERROR: Please set $EDITOR to open the package.\n')
             return ERROR
         query = args
-        shell_command = os.getenv('PIP_EDITOR').split()
+        shell_command = os.getenv('EDITOR').split()
         results = list(search_packages_info(query))
         installed = dict(
             [(p.project_name.lower(), p) for p in pkg_resources.working_set])
@@ -69,6 +69,5 @@ def main():
                        help='name of package')
     args = sys.argv
     args.pop(0)
-    print(args)
     view_cmd = ViewCommand()
     view_cmd.run({}, sys.argv)
