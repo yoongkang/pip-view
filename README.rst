@@ -3,6 +3,12 @@ using your editor.
 
 Ensure that the environment variable $EDITOR has been set.
 
-Usage:
+## Installation
 
-    pip-view django
+$ git clone https://github.com/yoongkang/pip-view.git
+$ cd pip-view
+$ python setup.py install
+
+## Usage:
+
+    pip-view [library-name]
