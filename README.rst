@@ -3,12 +3,14 @@ using your editor.
 
 Ensure that the environment variable $EDITOR has been set.
 
-## Installation
+Installation
+--------
+    $ git clone https://github.com/yoongkang/pip-view.git
+    $ cd pip-view
+    $ python setup.py install
 
-$ git clone https://github.com/yoongkang/pip-view.git
-$ cd pip-view
-$ python setup.py install
 
-## Usage:
+Usage:
+--------
 
     pip-view [library-name]
