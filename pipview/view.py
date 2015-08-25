@@ -63,10 +63,6 @@ class ViewCommand(Command):
 
 
 def main():
-    import argparse
-    parser = argparse.ArgumentParser(description='Open package in editor')
-    parser.add_argument('packages', metavar='P', type=str, nargs='+',
-                       help='name of package')
     args = sys.argv
     args.pop(0)
     view_cmd = ViewCommand()
